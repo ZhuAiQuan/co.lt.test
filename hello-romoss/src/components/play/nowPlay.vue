@@ -3,7 +3,8 @@
 </template>
 
 <script>
-import { nextTick, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onMounted, ref, watch } from 'vue';
+import { useStore } from 'vuex'
 export default {
     name: 'nowPlay',
     props: {
@@ -25,15 +26,17 @@ export default {
         }
     },
     setup(props) {
-        let dom = ref(null)
-        const play = ref(null)
+        const store = useStore();
+        let dom = ref(null);
+        const play = ref(null);
+        const lyric = computed(() => props.url)
         onMounted(() => {
             dom = document.getElementById('play');
-            console.log(props.url)
         })
-        watch(props.url, (val) => {
+        watch(lyric, (val) => {
             if (val) {
-                console.log(val)
+                dom = document.getElementById('play');
+                store.commit('GetAudioRef', dom)
             }
         })
     }

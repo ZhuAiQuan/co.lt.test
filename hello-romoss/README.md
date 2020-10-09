@@ -1,24 +1,10 @@
-# hello-romoss
 
-## Project setup
-```
-npm install
-```
+### 
+npm i 安装依赖
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+###
+npm run serve 进入系统
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+###
+咪咕音乐api接口
+nodejs来源(https://github.com/jsososo/MiguMusicApi)
